@@ -67,3 +67,8 @@ The project also needs some technical enhancement:
 - API testing
 - Container support (Docker)
 - Persistence
+
+## Because potatoes can code too
+<p align="center">
+  <img src="http://i.imgur.com/F13Vror.gif" alt="cotatoes"/>
+</p>
