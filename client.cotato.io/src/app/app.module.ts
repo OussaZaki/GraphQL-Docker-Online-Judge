@@ -30,7 +30,7 @@ const API_ENDPOINT = 'http://localhost:4242/graphql';
 })
 export class AppModule { }
 
-function _provideClient() {
+export function _provideClient() {
   return new ApolloClient({
     networkInterface: createNetworkInterface({
       uri: API_ENDPOINT
