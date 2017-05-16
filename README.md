@@ -68,7 +68,7 @@ The project also needs some technical enhancement:
 - Container support (Docker)
 - Persistence
 
-## Because potatoes can code too
+### Because potatoes can code too
 <p align="center">
   <img src="http://i.imgur.com/F13Vror.gif" alt="cotatoes"/>
 </p>
