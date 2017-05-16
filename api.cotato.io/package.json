@@ -1,0 +1,54 @@
+{
+  "name": "api.cotato.io",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "GraphQL Online Judge API",
+  "author": {
+    "name": "Oussama Zaki",
+    "email": "zaki.oussama@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "tsc": "tsc",
+    "tsc-watch": "tsc -w",
+    "build": "gulp build",
+    "start": "mkdir ./tmp & node build/server.js ",
+    "setup": "npm install & typings install",
+    "test": "gulp test",
+    "watch": "nodemon --watch build/src build/src/index.js"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "cors": "^2.8.3",
+    "debug": "^2.6.6",
+    "express": "^4.15.2",
+    "express-graphql": "^0.6.5",
+    "graphql": "^0.9.6",
+    "morgan": "^1.8.1"
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.3",
+    "@types/cors": "^2.8.1",
+    "@types/express": "^4.0.35",
+    "@types/express-graphql": "0.0.33",
+    "@types/graphql": "^0.9.1",
+    "@types/morgan": "^1.7.32",
+    "@types/nconf": "0.0.32",
+    "@types/node": "^6.0.51",
+    "gulp": "^3.9.1",
+    "gulp-env": "^0.4.0",
+    "gulp-mocha": "^4.3.1",
+    "gulp-rimraf": "^0.2.0",
+    "gulp-shell": "^0.5.2",
+    "gulp-tslint": "^4.3.4",
+    "nodemon": "^1.10.2",
+    "tslint": "^3.13.0",
+    "typescript": "^2.1.4"
+  },
+  "engines": {
+    "node": ">=6.1.1"
+  }
+}

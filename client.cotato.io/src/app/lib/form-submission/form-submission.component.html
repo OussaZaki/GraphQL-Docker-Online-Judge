@@ -1,0 +1,10 @@
+<div class="container">
+    <h1>Code Submission</h1>
+    <form (ngSubmit)="onSubmit()" #submissionForm="ngForm">
+      <div class="form-group">
+        <label for="code">Source Code</label>
+        <textarea type="text" class="form-control" id="code" [(ngModel)]="submission.code" name="code" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>

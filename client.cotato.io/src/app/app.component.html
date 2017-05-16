@@ -1,0 +1,7 @@
+<h4>Cotato.io</h4>
+<app-form-submission (submissions)="getSubmissions($event)"></app-form-submission>
+<div class="list-group">
+    <div *ngFor="let submission of submissions" class="list-group-item">
+        <app-submission [submission]=submission></app-submission>
+    </div>
+</div>
