@@ -24,7 +24,7 @@ The project is built using node, therefore make sure that you have `node` (v6.x)
 
 Additionally at this stage, it uses [python2](https://www.python.org/) to run the source codes, so make sure you have it installed, to make sure it's v2, you can run:
 
-	$ `python -v` 
+	$ `python --version` 
 
 
 ### Clone the repository
