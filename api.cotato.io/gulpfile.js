@@ -24,20 +24,9 @@ gulp.task('tslint', () => {
     .pipe(tslint.report('prose'));
 });
 
-/**
- * Compile TypeScript.
- */
-
-function compileTS(args, cb) {
-  return exec(tscCmd + args, (err, stdout, stderr) => {
-    console.log(stdout);
-
-    if (stderr) {
-      console.log(stderr);
-    }
-    cb(err);
-  });
-}
+gulp.task('serve', shell.task([
+  'npm start',
+]))
 
 gulp.task('compile', shell.task([
   'npm run tsc',
@@ -46,9 +35,17 @@ gulp.task('compile', shell.task([
 /**
  * Watch for changes in TypeScript
  */
-gulp.task('watch', shell.task([
-  'npm run tsc-watch',
-]))
+gulp.task('watch', ['compile'], () => {
+  gulp.watch('src/**/*.ts', ['compile', 'serve']);
+})
+
+/**
+ * Build the project.
+ */
+gulp.task('build', ['tslint', 'compile', 'configs'], () => {
+  console.log('Building the project ...');
+});
+
 
 /**
  * todo: figure out a config structure
@@ -59,12 +56,6 @@ gulp.task('configs', (cb) => {
     .pipe(gulp.dest('./build/src/configurations'));
 });
 
-/**
- * Build the project.
- */
-gulp.task('build', ['tslint', 'compile', 'configs'], () => {
-  console.log('Building the project ...');
-});
 
 /**
  * todo : figure out a test structure
