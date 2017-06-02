@@ -2,6 +2,7 @@
 
 # compiled output
 /dist
+/build
 /tmp
 /out-tsc
 
@@ -19,6 +20,8 @@
 
 # IDE - VSCode
 .vscode/*
+*/.vscode
+/.vscode
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -32,6 +35,7 @@
 npm-debug.log
 testem.log
 /typings
+*.d.ts
 
 # e2e
 /e2e/*.js
