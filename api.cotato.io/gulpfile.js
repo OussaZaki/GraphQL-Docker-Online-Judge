@@ -6,6 +6,11 @@ const tslint = require('gulp-tslint');
 const mocha = require('gulp-mocha');
 const shell = require('gulp-shell');
 const env = require('gulp-env');
+const ts = require('gulp-typescript');
+const nodemon = require('gulp-nodemon');
+
+const tsProject = ts.createProject('tsconfig.json');
+const outDir = "./build";
 
 /**
  * Remove build directory.
@@ -24,28 +29,42 @@ gulp.task('tslint', () => {
     .pipe(tslint.report('prose'));
 });
 
-gulp.task('serve', shell.task([
-  'npm start',
-]))
+/**
+ * Compile ts files to js
+ */
+gulp.task('compile', function() {
+    const tsResult = tsProject.src()
+        .pipe(tsProject());
 
-gulp.task('compile', shell.task([
-  'npm run tsc',
-]))
+    return tsResult.js.pipe(gulp.dest(outDir));
+});
 
 /**
  * Watch for changes in TypeScript
  */
 gulp.task('watch', ['compile'], () => {
-  gulp.watch('src/**/*.ts', ['compile', 'serve']);
+  gulp.watch('src/**/*.ts', ['compile']);
 })
 
 /**
- * Build the project.
+ * Compile ts files to js
  */
-gulp.task('build', ['tslint', 'compile', 'configs'], () => {
-  console.log('Building the project ...');
-});
+gulp.task('build', ['clean', 'tslint', 'compile']);
 
+/**
+ * Watch for changes in TypeScript
+ */
+gulp.task('serve', ['compile', 'watch'], () => {
+  nodemon({
+    watch: outDir,
+    script: `${outDir}/server.js`,
+    NODE_ENV: 'developement'
+  });
+})
+
+gulp.task('serve:prod', shell.task([
+  'mkdirp ./tmp & node build/server.js',
+]))
 
 /**
  * todo: figure out a config structure

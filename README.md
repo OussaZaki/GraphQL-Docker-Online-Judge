@@ -37,9 +37,13 @@ Additionally at this stage, it uses [python2](https://www.python.org/) to run th
 Following is how to get the api up and running:
 
 	$ cd api.cotato.io
-	$ npm install
-	$ npm run build
-	$ npm start
+	$ yarn
+	$ gulp build
+	$ gulp serve:prod
+
+To run the API in dev (watch) mode, run
+
+	$ gulp serve
 
 The API listens on [http://localhost:4242/graphql](http://localhost:4242/graphql)
 

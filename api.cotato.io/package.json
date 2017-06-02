@@ -11,15 +11,6 @@
     "type": "git",
     "url": ""
   },
-  "scripts": {
-    "tsc": "tsc",
-    "tsc-watch": "tsc -w",
-    "build": "gulp build",
-    "start": "mkdirp ./tmp & node build/server.js ",
-    "setup": "npm install & typings install",
-    "test": "gulp test",
-    "watch": "nodemon --watch build/src build/src/index.js"
-  },
   "dependencies": {
     "bluebird": "^3.5.0",
     "cors": "^2.8.3",
@@ -41,6 +32,7 @@
     "gulp": "^3.9.1",
     "gulp-env": "^0.4.0",
     "gulp-mocha": "^4.3.1",
+    "gulp-nodemon": "^2.2.1",
     "gulp-rimraf": "^0.2.0",
     "gulp-shell": "^0.5.2",
     "gulp-tslint": "^4.3.4",
