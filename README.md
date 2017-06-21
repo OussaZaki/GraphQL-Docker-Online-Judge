@@ -1,5 +1,5 @@
 # Cotato Online Judge
-![Cotato Logo](./cotato-banner.svg)
+![Cotato Logo](./cotato-banner.png)
 > Free and Open Source Online Judge, including a public API, Client and an Admin platform, powered by GraphQL and Angular.
 
 ## Work In Progress
